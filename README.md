@@ -1,3 +1,11 @@
+<!--
+ * @Date: 2025-01-17 10:41:38
+ * @LastEditors: zhaogang 156606672@qq.com
+ * @LastEditTime: 2025-01-20 23:49:57
+ * @FilePath: /my-website/README.md
+ * @name: filename
+ * @description: description
+-->
 # Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
@@ -5,13 +13,13 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 ### Installation
 
 ```
-$ yarn
+$ npm i
 ```
 
 ### Local Development
 
 ```
-$ yarn start
+$ npm run start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -19,7 +27,7 @@ This command starts a local development server and opens up a browser window. Mo
 ### Build
 
 ```
-$ yarn build
+$ npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
