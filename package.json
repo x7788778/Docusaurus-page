@@ -12,7 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "test": "run-my-own-tests && promises-aplus-tests src/somecode/myPromise"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",
@@ -28,6 +29,7 @@
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
     "gh-pages": "^6.3.0",
+    "promises-aplus-tests": "^2.1.2",
     "typescript": "~5.6.2"
   },
   "browserslist": {
