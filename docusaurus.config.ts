@@ -5,8 +5,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: '赵刚的博客',
-  tagline: '赵刚想尝试做个博客',
+  title: '芒果屋',
+  tagline: '欢迎来到我的博客',
+ 
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -132,7 +133,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/x7788778/Docusaurus-page',
             },
           ],
         },
