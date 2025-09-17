@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: '芒果屋',
-  tagline: '欢迎来到我的博客',
+  tagline: '欢迎来到德莱联盟！！',
  
   favicon: 'img/favicon.ico',
 
