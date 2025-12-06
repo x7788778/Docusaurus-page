@@ -1,0 +1,44 @@
+name: Deploy Docusaurus to GitHub Pages
+# 触发条件：push 到 master 分支时运行
+on:
+  push:
+    branches: [master]  # 注意：如果你的主分支是 main，这里改成 main
+    # 忽略对 gh-pages 分支的 push（避免循环触发）
+    branches-ignore: [gh-pages]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # 拉取所有提交记录（Docusaurus 生成文档历史需要）
+          fetch-depth: 0
+
+      # 2. 安装 Node.js（匹配 Docusaurus 要求的版本，建议 18+/20+）
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'  # 缓存 npm 依赖，加速构建
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: npm install
+
+      # 4. 构建 Docusaurus 静态文件（输出到 ./build 目录）
+      - name: Build Docusaurus
+        run: npm run build
+
+      # 5. 部署到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # GitHub 自动生成的 Token，无需手动配置
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 要推送的构建产物目录（Docusaurus 固定是 build）
+          publish_dir: ./build
+          # 部署到 gh-pages 分支
+          publish_branch: gh-pages
