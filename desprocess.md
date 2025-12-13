@@ -8,3 +8,4 @@
 -->
 ## 20250120
 初始化博客，并链接github仓库，发布页面到github page
+npm run deploy
